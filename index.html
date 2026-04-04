@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Interactive online quiz system with local storage - test your knowledge and track results."
+    />
+    <title>QuizMaster | Online Quiz System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <div class="logo">🧠 QuizMaster</div>
+        <ul class="nav-links">
+          <li><a href="#" id="homeLink">Home</a></li>
+          <li><a href="#about" id="aboutLink">About</a></li>
+          <li>
+            <button id="viewResultsBtn" class="btn-outline">
+              📊 Results History
+            </button>
+          </li>
+          <li>
+            <button id="resetQuizBtn" class="btn-outline-danger">
+              ⟳ Reset Quiz
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <!-- Quiz Section -->
+        <section class="quiz-section">
+          <div class="quiz-header">
+            <h1>Knowledge Challenge</h1>
+            <p>
+              Test your skills with our interactive quiz. Answers are saved
+              automatically.
+            </p>
+          </div>
+
+          <div class="quiz-card" id="quizCard">
+            <div class="question-progress">
+              <span id="currentQuestionNum">1</span> /
+              <span id="totalQuestions">0</span>
+            </div>
+            <div class="question-text" id="questionText">
+              Loading questions...
+            </div>
+            <div class="options-list" id="optionsContainer"></div>
+            <div class="quiz-nav">
+              <button id="prevBtn" class="btn-secondary" disabled>
+                ← Previous
+              </button>
+              <button id="nextBtn" class="btn-primary">Next →</button>
+              <button id="submitBtn" class="btn-success" style="display: none">
+                Submit Quiz
+              </button>
+            </div>
+          </div>
+
+          <!-- Results Display -->
+          <div class="results-card" id="resultsCard" style="display: none">
+            <h2>Your Score</h2>
+            <div class="score-display">
+              <span id="scoreValue">0</span> / <span id="totalValue">0</span>
+            </div>
+            <p id="resultMessage"></p>
+            <button id="retakeBtn" class="btn-primary">🔄 Retake Quiz</button>
+          </div>
+        </section>
+
+        <!-- History Modal (hidden by default) -->
+        <div id="historyModal" class="modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>📜 Past Quiz Results</h3>
+            <div id="historyList" class="history-list">
+              <p>No attempts yet. Take the quiz to see your history!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+          <h2>About QuizMaster</h2>
+          <p>
+            QuizMaster is a dynamic online quiz system that saves your progress
+            and results using your browser's localStorage. Answer
+            multiple-choice questions, review past attempts, and challenge
+            yourself anytime.
+          </p>
+          <ul class="features-list">
+            <li>✅ 7 engaging questions</li>
+            <li>💾 Auto-save progress (refresh safe)</li>
+            <li>📊 View past results leaderboard</li>
+            <li>📱 Fully responsive design</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Sagar Bastola © 2026 QuizMaster — Test your knowledge, track your growth.</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
